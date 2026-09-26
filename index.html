@@ -5,149 +5,563 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="RMiner: A Benchmark for Dexterous Robotic Manipulation in Mining Environments"
+      content="RMiner is an interactive simulation benchmark for dexterous robotic manipulation in underground mining environments."
     />
-    <title>RMiner</title>
-    <style>
-      :root {
-        color-scheme: dark;
-        font-family:
-          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        background: #10100e;
-        color: #f4f1e8;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: grid;
-        place-items: center;
-        overflow-x: hidden;
-        background:
-          radial-gradient(circle at 20% 15%, rgba(218, 154, 64, 0.14), transparent 30rem),
-          radial-gradient(circle at 85% 85%, rgba(116, 95, 60, 0.12), transparent 28rem),
-          #10100e;
-      }
-
-      main {
-        width: min(960px, calc(100% - 40px));
-        padding: 72px 0;
-        text-align: center;
-      }
-
-      .eyebrow {
-        margin: 0 0 20px;
-        color: #d9a34f;
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-      }
-
-      h1 {
-        max-width: 900px;
-        margin: 0 auto;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2.7rem, 7vw, 5.8rem);
-        font-weight: 600;
-        line-height: 0.98;
-        letter-spacing: -0.045em;
-      }
-
-      h1 span {
-        display: block;
-        margin-bottom: 18px;
-        color: #e2a84d;
-        font-family:
-          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        font-size: 0.58em;
-        font-weight: 800;
-        letter-spacing: -0.055em;
-      }
-
-      .divider {
-        width: 72px;
-        height: 2px;
-        margin: 42px auto 30px;
-        background: linear-gradient(90deg, transparent, #d9a34f, transparent);
-      }
-
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .link-card {
-        min-width: 160px;
-        padding: 15px 22px;
-        border: 1px solid rgba(244, 241, 232, 0.14);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.035);
-      }
-
-      .link-card strong {
-        display: inline-block;
-        margin-right: 8px;
-        font-size: 0.92rem;
-      }
-
-      .link-card small {
-        color: #aaa69c;
-        font-size: 0.74rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      footer {
-        margin-top: 38px;
-        color: #77746d;
-        font-size: 0.78rem;
-      }
-
-      @media (max-width: 560px) {
-        main {
-          padding: 48px 0;
-        }
-
-        .links {
-          align-items: stretch;
-          flex-direction: column;
-        }
-
-        .link-card {
-          width: 100%;
-        }
-      }
-    </style>
+    <meta property="og:title" content="RMiner" />
+    <meta
+      property="og:description"
+      content="A Benchmark for Dexterous Robotic Manipulation in Mining Environments"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/hero-poster.jpg" />
+    <meta name="theme-color" content="#081014" />
+    <title>RMiner | Dexterous Robotic Manipulation in Mining Environments</title>
+    <link rel="icon" href="assets/brand/rminer-logo.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <main>
-      <p class="eyebrow">Project Page</p>
-      <h1>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="RMiner home">
+        <span class="brand-mark">R</span>
         <span>RMiner</span>
-        A Benchmark for Dexterous Robotic Manipulation in Mining Environments
-      </h1>
+      </a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-nav-toggle
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-navigation" class="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="#overview">Overview</a>
+        <a href="#tasks">Tasks</a>
+        <a href="#construction">Construction</a>
+        <a href="#conditions">Conditions</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#experiments">Experiments</a>
+        <a href="#real-robot">Real Robot</a>
+      </nav>
+    </header>
 
-      <div class="divider" aria-hidden="true"></div>
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        data-autoplay
+        preload="metadata"
+        poster="assets/images/hero-poster.jpg"
+        aria-hidden="true"
+      >
+        <source src="assets/videos/hero-loop.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-scrim"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
 
-      <ul class="links" aria-label="Project resources">
-        <li class="link-card"><strong>arXiv</strong><small>Coming Soon</small></li>
-        <li class="link-card"><strong>GitHub</strong><small>Coming Soon</small></li>
-        <li class="link-card"><strong>Dataset</strong><small>Coming Soon</small></li>
-      </ul>
+      <div class="hero-content">
+        <p class="venue-label">ICRA 2027 Submission</p>
+        <img
+          class="hero-logo"
+          src="assets/brand/rminer-logo.png"
+          alt="RMiner"
+          width="201"
+          height="113"
+        />
+        <h1 id="hero-title">
+          A Benchmark for Dexterous Robotic Manipulation in Mining Environments
+        </h1>
+        <p class="hero-summary">
+          Interactive mining scenes, functional assets, six manipulation tasks, and controlled
+          underground conditions for reproducible robot learning and evaluation.
+        </p>
+        <div class="resource-row" aria-label="Project resources">
+          <span class="resource-link is-disabled" aria-disabled="true">
+            <span>Paper</span><small>Coming Soon</small>
+          </span>
+          <span class="resource-link is-disabled" aria-disabled="true">
+            <span>arXiv</span><small>Coming Soon</small>
+          </span>
+          <span class="resource-link is-disabled" aria-disabled="true">
+            <span>Code</span><small>Coming Soon</small>
+          </span>
+          <span class="resource-link is-disabled" aria-disabled="true">
+            <span>Dataset</span><small>Coming Soon</small>
+          </span>
+        </div>
+      </div>
 
-      <footer>More project materials will be released soon.</footer>
+      <a class="scroll-cue" href="#overview" aria-label="Scroll to overview">
+        <span>Explore RMiner</span>
+        <span class="scroll-line"></span>
+      </a>
+    </section>
+
+    <main id="main-content">
+      <section id="overview" class="section section-light">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="section-kicker">Overview</p>
+            <h2>Underground manipulation as a reproducible benchmark</h2>
+          </div>
+
+          <div class="overview-layout">
+            <div class="abstract-copy reveal">
+              <p class="lead">
+                Robotic manipulation in underground mines requires handling specialized equipment,
+                task-specific physical interactions, and challenging environmental conditions that
+                are not explicitly targeted by general-purpose manipulation benchmarks.
+              </p>
+              <p>
+                We introduce RMiner, an interactive simulation benchmark designed for dexterous
+                robotic manipulation in underground mining. Built from real mining-site
+                observations, RMiner provides underground scenes, interactive mining assets, six
+                manipulation tasks, multiple robot embodiments, and configurable persistent
+                environmental conditions and sudden events.
+              </p>
+              <p>
+                To support scalable benchmark construction, we further develop a task-guided
+                workflow for automated mining asset generation, structural validation, physical
+                configuration, and repair. Experiments show that additional post training on the
+                evaluated general domain tasks does not improve performance on the mining tasks,
+                while mining-specific environmental conditions remain challenging for the evaluated
+                policies. A physical robot case study further indicates that RMiner simulation data
+                can improve policy performance on a real robot.
+              </p>
+            </div>
+
+            <aside class="overview-facts reveal" aria-label="RMiner at a glance">
+              <div><strong>6</strong><span>Mining tasks</span></div>
+              <div><strong>3</strong><span>Robot embodiments</span></div>
+              <div><strong>4</strong><span>Mining conditions</span></div>
+              <div><strong>98%</strong><span>Asset usability</span></div>
+            </aside>
+          </div>
+
+          <figure class="feature-video reveal">
+            <div class="video-frame video-frame-wide">
+              <video
+                controls
+                playsinline
+                preload="none"
+                poster="assets/images/hero-poster.jpg"
+                aria-label="RMiner project overview video"
+                data-lazy-video
+              >
+                <source data-src="assets/videos/overview.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <figcaption>
+              <span>Project overview</span>
+              <span>2:34</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="tasks" class="section section-ink">
+        <div class="section-shell">
+          <div class="section-heading section-heading-light reveal">
+            <p class="section-kicker">Mining Task Suite</p>
+            <h2>Six tasks cover distinct physical interaction patterns</h2>
+            <p>
+              The task suite spans object transfer, constrained insertion, sustained contact,
+              rotation, precise alignment, and installation.
+            </p>
+          </div>
+
+          <div class="task-grid">
+            <article class="task-card reveal">
+              <div class="video-frame task-media">
+                <video controls muted loop playsinline preload="none" poster="assets/images/tasks/primer-assembly.jpg" aria-label="Primer Assembly task demonstration" data-lazy-video data-autoplay>
+                  <source data-src="assets/videos/tasks/primer-assembly.mp4" type="video/mp4" />
+                </video>
+                <span class="task-index">01</span>
+              </div>
+              <div class="task-copy">
+                <h3>Primer Assembly</h3>
+                <p>Insert an inert mock detonator into a mock explosive cartridge.</p>
+              </div>
+            </article>
+
+            <article class="task-card reveal">
+              <div class="video-frame task-media">
+                <video controls muted loop playsinline preload="none" poster="assets/images/tasks/cart-pushing.jpg" aria-label="Cart Pushing task demonstration" data-lazy-video data-autoplay>
+                  <source data-src="assets/videos/tasks/cart-pushing.mp4" type="video/mp4" />
+                </video>
+                <span class="task-index">02</span>
+              </div>
+              <div class="task-copy">
+                <h3>Cart Pushing</h3>
+                <p>Maintain contact with a mining cart and push it into the target area.</p>
+              </div>
+            </article>
+
+            <article class="task-card reveal">
+              <div class="video-frame task-media">
+                <video controls muted loop playsinline preload="none" poster="assets/images/tasks/valve-operation.jpg" aria-label="Valve Operation task demonstration" data-lazy-video data-autoplay>
+                  <source data-src="assets/videos/tasks/valve-operation.mp4" type="video/mp4" />
+                </video>
+                <span class="task-index">03</span>
+              </div>
+              <div class="task-copy">
+                <h3>Valve Operation</h3>
+                <p>Grasp and rotate a mining valve until it reaches the target state.</p>
+              </div>
+            </article>
+
+            <article class="task-card reveal">
+              <div class="video-frame task-media">
+                <video controls muted loop playsinline preload="none" poster="assets/images/tasks/primer-insertion.jpg" aria-label="Primer Insertion task demonstration" data-lazy-video data-autoplay>
+                  <source data-src="assets/videos/tasks/primer-insertion.mp4" type="video/mp4" />
+                </video>
+                <span class="task-index">04</span>
+              </div>
+              <div class="task-copy">
+                <h3>Primer Insertion</h3>
+                <p>Insert the assembled mock primer into the target blasthole.</p>
+              </div>
+            </article>
+
+            <article class="task-card reveal">
+              <div class="video-frame task-media">
+                <video controls muted loop playsinline preload="none" poster="assets/images/tasks/nut-installation.jpg" aria-label="Rock-Bolt Nut Installation task demonstration" data-lazy-video data-autoplay>
+                  <source data-src="assets/videos/tasks/nut-installation.mp4" type="video/mp4" />
+                </video>
+                <span class="task-index">05</span>
+              </div>
+              <div class="task-copy">
+                <h3>Rock-Bolt Nut Installation</h3>
+                <p>Align a nut with the end of a rock bolt and complete the installation.</p>
+              </div>
+            </article>
+
+            <article class="task-card reveal">
+              <div class="video-frame task-media">
+                <video controls muted loop playsinline preload="none" poster="assets/images/tasks/cutter-pick-retrieval.jpg" aria-label="Cutter-Pick Retrieval task demonstration" data-lazy-video data-autoplay>
+                  <source data-src="assets/videos/tasks/cutter-pick-retrieval.mp4" type="video/mp4" />
+                </video>
+                <span class="task-index">06</span>
+              </div>
+              <div class="task-copy">
+                <h3>Cutter-Pick Retrieval</h3>
+                <p>Retrieve a mining cutter pick and place it in the collection box.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="construction" class="section section-light">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="section-kicker">Benchmark Construction</p>
+            <h2>An agent coordinates asset and scene construction</h2>
+            <p>
+              Task descriptions guide functional geometry, physical authoring, validation, and
+              repair before assets enter the benchmark.
+            </p>
+          </div>
+
+          <article class="feature-row reveal">
+            <div class="feature-copy">
+              <p class="feature-number">01</p>
+              <h3>Mining asset construction</h3>
+              <p>
+                The agent derives interaction requirements from each task, generates candidate 3D
+                assets, and checks functional structures before configuring physical properties in
+                Isaac Sim.
+              </p>
+              <ol class="process-list">
+                <li>Task-guided generation</li>
+                <li>Structural validation and repair</li>
+                <li>Physics authoring and simulation validation</li>
+              </ol>
+            </div>
+            <div class="construction-media construction-media-pair">
+              <figure>
+                <div class="video-frame">
+                  <video controls muted playsinline preload="none" poster="assets/images/construction/asset-validation.png" aria-label="Automated asset validation workflow" data-lazy-video>
+                    <source data-src="assets/videos/construction/asset-validation.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <figcaption>Validation and repair</figcaption>
+              </figure>
+              <figure>
+                <div class="video-frame">
+                  <video controls muted playsinline preload="none" poster="assets/images/construction/agent-build.jpg" aria-label="Agent-driven asset building process" data-lazy-video>
+                    <source data-src="assets/videos/construction/agent-build.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <figcaption>Automated build process</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="feature-row feature-row-reverse reveal">
+            <div class="feature-copy">
+              <p class="feature-number">02</p>
+              <h3>Underground scene construction</h3>
+              <p>
+                Observations collected at real mining sites become textured visual meshes and
+                simplified collision meshes. Shared transforms preserve scale and alignment before
+                the scene enters Isaac Sim.
+              </p>
+              <p class="feature-note">
+                Static checks cover metric scale, transform consistency, and collision API
+                configuration.
+              </p>
+            </div>
+            <div class="scene-comparison" aria-label="Real-world and simulation scene comparison">
+              <figure>
+                <img src="assets/images/construction/scene-real.jpg" alt="Underground mine captured in the real world" loading="lazy" />
+                <figcaption>Real-world observation</figcaption>
+              </figure>
+              <span class="comparison-arrow" aria-hidden="true">↓</span>
+              <figure>
+                <img src="assets/images/construction/scene-sim.jpg" alt="Reconstructed underground mine in simulation" loading="lazy" />
+                <figcaption>Interactive simulation scene</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="conditions" class="section section-stone">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="section-kicker">Underground Conditions</p>
+            <h2>Persistent conditions and sudden events</h2>
+            <p>
+              RMiner separates sustained visibility changes from events that disrupt manipulation
+              during task execution.
+            </p>
+          </div>
+
+          <div class="condition-grid">
+            <article class="condition-card reveal">
+              <div class="video-frame condition-media">
+                <video controls muted loop playsinline preload="none" poster="assets/images/conditions/uneven-lighting.jpg" aria-label="Uneven lighting condition" data-lazy-video data-autoplay>
+                  <source data-src="assets/videos/conditions/uneven-lighting.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div><span>Persistent</span><h3>Uneven Lighting</h3></div>
+            </article>
+            <article class="condition-card reveal">
+              <div class="video-frame condition-media">
+                <video controls muted loop playsinline preload="none" poster="assets/images/conditions/dust.jpg" aria-label="Dust condition" data-lazy-video data-autoplay>
+                  <source data-src="assets/videos/conditions/dust.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div><span>Persistent</span><h3>Dust</h3></div>
+            </article>
+            <article class="condition-card reveal">
+              <div class="video-frame condition-media">
+                <video controls muted loop playsinline preload="none" poster="assets/images/conditions/falling-debris.jpg" aria-label="Falling debris event" data-lazy-video data-autoplay>
+                  <source data-src="assets/videos/conditions/falling-debris.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div><span>Sudden event</span><h3>Falling Debris</h3></div>
+            </article>
+          </div>
+
+          <div class="condition-note reveal">
+            <div>
+              <span class="pulse-dot"></span>
+              <strong>Sudden Dust Burst</strong>
+            </div>
+            <p>
+              Dust and sudden dust bursts use the same local volumetric representation. Emission
+              timing and intensity distinguish sustained dust from an abrupt loss of visibility.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="platforms" class="section section-light">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="section-kicker">Robots and Teleoperation</p>
+            <h2>Multiple embodiments and control interfaces</h2>
+            <p>
+              The same benchmark tasks support three robot embodiments, grippers or dexterous
+              hands, and immersive teleoperation interfaces.
+            </p>
+          </div>
+
+          <div class="robot-grid">
+            <figure class="robot-figure reveal">
+              <img src="assets/images/platforms/unitree-g1.jpg" alt="Unitree G1 performing a mining manipulation task" loading="lazy" />
+              <figcaption><strong>Unitree G1</strong><span>Simulation embodiment</span></figcaption>
+            </figure>
+            <figure class="robot-figure reveal">
+              <img src="assets/images/platforms/galbot-g1.jpg" alt="Galbot G1 performing a mining manipulation task" loading="lazy" />
+              <figcaption><strong>Galbot G1</strong><span>Simulation embodiment</span></figcaption>
+            </figure>
+            <figure class="robot-figure reveal">
+              <img src="assets/images/platforms/astribot-s1.jpg" alt="Astribot S1 performing a mining manipulation task" loading="lazy" />
+              <figcaption><strong>Astribot S1</strong><span>Simulation and physical robot</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="teleop-layout reveal">
+            <figure class="teleop-photo">
+              <img src="assets/images/platforms/teleop-gripper.jpg" alt="Operator collecting demonstrations with a handheld teleoperation interface" loading="lazy" />
+            </figure>
+            <div class="teleop-copy">
+              <p class="section-kicker">Demonstration Collection</p>
+              <h3>Immersive teleoperation</h3>
+              <p>
+                Quest and PICO headsets support demonstration collection across gripper and
+                dexterous-hand configurations.
+              </p>
+              <div class="hardware-row" aria-label="Supported control hardware">
+                <div><img src="assets/images/platforms/quest.png" alt="Meta Quest headset and controllers" loading="lazy" /><span>Quest</span></div>
+                <div><img src="assets/images/platforms/pico.png" alt="PICO headset and controllers" loading="lazy" /><span>PICO</span></div>
+                <div><img src="assets/images/platforms/gripper.png" alt="Robotic gripper" loading="lazy" /><span>Gripper</span></div>
+                <div><img src="assets/images/platforms/dexterous-hand.png" alt="Dexterous robotic hand" loading="lazy" /><span>Dexterous hand</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiments" class="section section-ink experiments-section">
+        <div class="section-shell">
+          <div class="section-heading section-heading-light reveal">
+            <p class="section-kicker">Experiments</p>
+            <h2>Mining tasks expose clear domain-specific challenges</h2>
+            <p>
+              Success rates are reported under the evaluation settings described in the paper.
+            </p>
+          </div>
+
+          <div class="results-grid">
+            <figure class="result-panel reveal">
+              <figcaption>
+                <span>Nominal task performance</span>
+                <small>Mean success rate across six tasks (%)</small>
+              </figcaption>
+              <div class="bar-list" aria-label="Mean success rate by policy">
+                <div class="bar-row"><span>DP</span><div class="bar-track"><i style="--value: 85%"></i></div><strong>51.0</strong></div>
+                <div class="bar-row"><span>X-VLA</span><div class="bar-track"><i style="--value: 78.33%"></i></div><strong>47.0</strong></div>
+                <div class="bar-row"><span>π0.5</span><div class="bar-track"><i style="--value: 80.5%"></i></div><strong>48.3</strong></div>
+                <div class="bar-row is-muted"><span>π0.5-RC365</span><div class="bar-track"><i style="--value: 65%"></i></div><strong>39.0</strong></div>
+              </div>
+              <p class="result-footnote">
+                General-domain post training did not improve mining-task performance under the
+                evaluated protocol.
+              </p>
+            </figure>
+
+            <figure class="result-panel result-panel-wide reveal">
+              <figcaption>
+                <span>Training under mining conditions</span>
+                <small>Average success rate across four policies (%)</small>
+              </figcaption>
+              <div class="legend"><span class="legend-base">Base</span><span class="legend-full">Full</span></div>
+              <div class="paired-chart" aria-label="Base and Full training success rates by condition">
+                <div class="paired-row"><span>Nominal</span><div><i class="base" style="--value:77.08%"></i><b>46.25</b><i class="full" style="--value:75.83%"></i><b>45.5</b></div></div>
+                <div class="paired-row"><span>Uneven lighting</span><div><i class="base" style="--value:46.25%"></i><b>27.75</b><i class="full" style="--value:63.33%"></i><b>38.0</b></div></div>
+                <div class="paired-row"><span>Dust</span><div><i class="base" style="--value:44.17%"></i><b>26.5</b><i class="full" style="--value:62.92%"></i><b>37.75</b></div></div>
+                <div class="paired-row"><span>Sudden dust burst</span><div><i class="base" style="--value:28.75%"></i><b>17.25</b><i class="full" style="--value:47.08%"></i><b>28.25</b></div></div>
+                <div class="paired-row"><span>Falling debris</span><div><i class="base" style="--value:23.75%"></i><b>14.25</b><i class="full" style="--value:47.5%"></i><b>28.5</b></div></div>
+              </div>
+            </figure>
+          </div>
+
+          <div class="evidence-strip">
+            <article class="evidence-card reveal">
+              <p>Asset usability</p>
+              <div class="metric-progression" aria-label="Asset usability improves from 10 to 22 to 98 percent">
+                <span><strong>10%</strong><small>One-shot</small></span>
+                <i></i>
+                <span><strong>22%</strong><small>Structural repair</small></span>
+                <i></i>
+                <span class="metric-highlight"><strong>98%</strong><small>Full workflow</small></span>
+              </div>
+            </article>
+            <article class="evidence-card reveal">
+              <p>Average construction time</p>
+              <div class="time-comparison">
+                <span><strong>40</strong><small>minutes · automated</small></span>
+                <span><strong>90</strong><small>minutes · manual</small></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="real-robot" class="section section-light">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="section-kicker">Physical Robot Case Study</p>
+            <h2>Primer Assembly with Astribot S1</h2>
+            <p>
+              A preliminary physical-robot study compares training from 20 real demonstrations with
+              joint training from the same real data and 300 RMiner simulation demonstrations.
+            </p>
+          </div>
+
+          <div class="real-grid">
+            <figure class="real-panel reveal">
+              <div class="video-frame">
+                <video controls muted loop playsinline preload="none" poster="assets/images/real/real.jpg" aria-label="Physical robot trained with real demonstrations" data-lazy-video data-autoplay>
+                  <source data-src="assets/videos/real/real.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption><span>Real</span><small>20 physical demonstrations</small></figcaption>
+            </figure>
+            <figure class="real-panel reveal">
+              <div class="video-frame">
+                <video controls muted loop playsinline preload="none" poster="assets/images/real/sim-real.jpg" aria-label="Physical robot trained with simulation and real demonstrations" data-lazy-video data-autoplay>
+                  <source data-src="assets/videos/real/sim-real.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption><span>Sim + Real</span><small>300 simulation + 20 physical demonstrations</small></figcaption>
+            </figure>
+          </div>
+
+          <div class="real-results reveal" aria-label="Physical robot success rates">
+            <div><span>Diffusion Policy</span><strong>40%</strong><i></i><strong class="improved">50%</strong></div>
+            <div><span>X-VLA</span><strong>40%</strong><i></i><strong class="improved">55%</strong></div>
+            <p>
+              Adding RMiner demonstrations produced higher observed success rates in this limited
+              case study. The result is preliminary and does not constitute a comprehensive
+              physical-robot evaluation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="release-section" aria-labelledby="release-title">
+        <div class="section-shell release-layout">
+          <div>
+            <p class="section-kicker">Resources</p>
+            <h2 id="release-title">Paper, code, and data will be released here</h2>
+          </div>
+          <div class="release-list">
+            <span>Paper <small>Coming Soon</small></span>
+            <span>Code <small>Coming Soon</small></span>
+            <span>Dataset <small>Coming Soon</small></span>
+            <span>BibTeX <small>Coming Soon</small></span>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="section-shell">
+        <span>RMiner</span>
+        <span>Anonymous ICRA 2027 submission</span>
+      </div>
+    </footer>
   </body>
 </html>
