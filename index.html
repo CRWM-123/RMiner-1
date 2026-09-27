@@ -530,8 +530,34 @@
           </div>
 
           <div class="real-results reveal" aria-label="Physical robot success rates">
-            <div><span>Diffusion Policy</span><strong>40%</strong><i></i><strong class="improved">50%</strong></div>
-            <div><span>X-VLA</span><strong>40%</strong><i></i><strong class="improved">55%</strong></div>
+            <div class="real-metric">
+              <span class="real-policy">Diffusion Policy</span>
+              <div class="real-comparison" aria-label="Base 40 percent, increasing to 50 percent with RMiner demonstrations">
+                <div class="real-score">
+                  <small>Base</small>
+                  <strong>40%</strong>
+                </div>
+                <span class="real-arrow" aria-hidden="true">&rarr;</span>
+                <div class="real-score is-improved">
+                  <small>+ RMiner</small>
+                  <div><strong>50%</strong><em>+10 pp</em></div>
+                </div>
+              </div>
+            </div>
+            <div class="real-metric">
+              <span class="real-policy">X-VLA</span>
+              <div class="real-comparison" aria-label="Base 40 percent, increasing to 55 percent with RMiner demonstrations">
+                <div class="real-score">
+                  <small>Base</small>
+                  <strong>40%</strong>
+                </div>
+                <span class="real-arrow" aria-hidden="true">&rarr;</span>
+                <div class="real-score is-improved">
+                  <small>+ RMiner</small>
+                  <div><strong>55%</strong><em>+15 pp</em></div>
+                </div>
+              </div>
+            </div>
             <p>
               Adding RMiner demonstrations produced higher observed success rates in this limited
               case study. The result is preliminary and does not constitute a comprehensive
