@@ -428,194 +428,42 @@ a {
   margin: 0;
 }
 
-.architecture-top {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 16px;
-}
-
-.architecture-panel {
-  min-width: 0;
-  padding: clamp(22px, 3vw, 36px);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--paper-bright);
-}
-
-.architecture-panel-heading,
-.architecture-benchmark-heading {
-  margin-bottom: 24px;
-}
-
-.architecture-step {
-  color: var(--blue);
-  font-size: 0.66rem;
-  font-weight: 780;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.architecture-panel h3,
-.architecture-benchmark h3 {
-  margin: 8px 0 0;
-  font-family: var(--display);
-  font-size: clamp(1.6rem, 2.7vw, 2.25rem);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-}
-
-.architecture-component-list {
-  display: grid;
-  gap: 10px;
-}
-
-.architecture-component {
-  display: grid;
-  grid-template-columns: minmax(125px, 0.65fr) minmax(0, 1fr);
-  gap: 14px;
-  align-items: center;
-  min-height: 76px;
-  padding: 14px 18px;
-  border: 1px solid #c6dbeb;
-  border-radius: 6px;
-  background: #eaf3fa;
-}
-
-.architecture-component-scene {
-  border-color: #b9ddc8;
-  background: #eaf5ec;
-}
-
-.architecture-component strong,
-.architecture-benchmark-item strong {
-  font-size: 0.83rem;
-  font-weight: 750;
-  line-height: 1.3;
-}
-
-.architecture-component p,
-.architecture-benchmark-item p {
-  margin: 0;
-  color: #4d5b61;
-  font-size: 0.79rem;
-  line-height: 1.5;
-}
-
-.architecture-flow {
-  display: grid;
-  gap: 0;
-}
-
-.architecture-flow-node {
-  display: grid;
-  min-height: 76px;
-  place-items: center;
-  padding: 12px 18px;
-  border: 1px solid #c6dbeb;
-  border-radius: 6px;
-  background: #eaf3fa;
-  font-size: 0.88rem;
-  font-weight: 750;
-  text-align: center;
-}
-
-.architecture-agent {
-  border-color: #dbc9aa;
-  background: #f7efe1;
-}
-
-.architecture-flow-arrow {
-  height: 30px;
-  color: var(--muted);
-  font-size: 1.25rem;
-  line-height: 30px;
-  text-align: center;
-}
-
-.architecture-flow-branch {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.architecture-flow-branch .architecture-flow-node:last-child {
-  border-color: #b9ddc8;
-  background: #eaf5ec;
-}
-
-.architecture-environment {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-color: #ebce97;
-  background: #fff2d9;
-}
-
-.architecture-environment small {
-  color: #75551f;
-  font-size: 0.7rem;
-  font-weight: 650;
-}
-
-.architecture-connector {
-  display: grid;
-  height: 58px;
-  place-items: center;
-  color: #51616a;
-  font-size: 0.65rem;
-  font-weight: 770;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-}
-
-.architecture-connector span {
-  padding: 7px 13px;
-  border: 1px solid #cbd1ce;
-  border-radius: 999px;
-  background: var(--stone);
-}
-
-.architecture-benchmark {
-  padding: clamp(24px, 3vw, 38px);
-  border: 1px solid #2c454d;
-  border-radius: 10px;
-  background: #122329;
-  color: white;
-}
-
-.architecture-benchmark .architecture-step {
-  color: var(--gold-soft);
-}
-
-.architecture-benchmark-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.architecture-benchmark-item {
-  min-width: 0;
-  min-height: 126px;
-  padding: 19px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.055);
-}
-
-.architecture-benchmark-item strong {
+.architecture-image-link {
   display: block;
-  margin-bottom: 9px;
-  color: white;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 22px 60px rgba(8, 20, 26, 0.1);
+  cursor: zoom-in;
 }
 
-.architecture-benchmark-item p {
-  color: rgba(255, 255, 255, 0.63);
+.architecture-image-link img {
+  width: 100%;
+  height: auto;
 }
 
 .architecture-figure figcaption {
-  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 17px;
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.architecture-figure figcaption > span {
+  max-width: 800px;
+}
+
+.architecture-figure figcaption a {
+  align-self: flex-start;
+  border-bottom: 1px solid currentColor;
+  color: var(--blue);
+  font-weight: 720;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .feature-video {
@@ -1415,10 +1263,6 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .architecture-top {
-    grid-template-columns: 1fr;
-  }
-
   .feature-row-reverse .feature-copy,
   .feature-row-reverse .scene-comparison {
     order: initial;
@@ -1479,17 +1323,9 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .architecture-component {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-
-  .architecture-benchmark-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .architecture-benchmark-item {
-    min-height: 0;
+  .architecture-figure figcaption {
+    flex-direction: column;
+    gap: 10px;
   }
 
   .feature-row {
