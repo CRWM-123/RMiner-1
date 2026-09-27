@@ -108,50 +108,36 @@
       <section id="overview" class="section section-light">
         <div class="section-shell">
           <div class="section-heading reveal">
-            <p class="section-kicker">Overview</p>
-            <h2>Underground manipulation as a reproducible benchmark</h2>
+            <h2>Abstract</h2>
           </div>
 
-          <div class="overview-layout">
-            <div class="abstract-copy reveal">
-              <p class="lead">
-                Robotic manipulation in underground mines requires handling specialized equipment,
-                task-specific physical interactions, and challenging environmental conditions that
-                are not explicitly targeted by general-purpose manipulation benchmarks.
-              </p>
-              <p>
-                We introduce RMiner, an interactive simulation benchmark designed for dexterous
-                robotic manipulation in underground mining. Built from real mining-site
-                observations, RMiner provides underground scenes, interactive mining assets, six
-                manipulation tasks, multiple robot embodiments, and configurable persistent
-                environmental conditions and sudden events.
-              </p>
-              <p>
-                To support scalable benchmark construction, we further develop a task-guided
-                workflow for automated mining asset generation, structural validation, physical
-                configuration, and repair. Experiments show that additional post training on the
-                evaluated general domain tasks does not improve performance on the mining tasks,
-                while mining-specific environmental conditions remain challenging for the evaluated
-                policies. A physical robot case study further indicates that RMiner simulation data
-                can improve policy performance on a real robot.
-              </p>
-            </div>
-
-            <aside class="overview-facts reveal" aria-label="RMiner at a glance">
-              <div><strong>6</strong><span>Mining tasks</span></div>
-              <div><strong>3</strong><span>Robot embodiments</span></div>
-              <div><strong>4</strong><span>Mining conditions</span></div>
-              <div><strong>98%</strong><span>Asset usability</span></div>
-            </aside>
+          <div class="abstract-copy reveal">
+            <p>
+              Robotic manipulation in underground mines requires handling specialized equipment,
+              task-specific physical interactions, and challenging environmental conditions that
+              are not explicitly targeted by general-purpose manipulation benchmarks. We introduce
+              RMiner, an interactive simulation benchmark designed for dexterous robotic
+              manipulation in underground mining. Built from real mining-site observations, RMiner
+              provides underground scenes, interactive mining assets, six manipulation tasks,
+              multiple robot embodiments, and configurable persistent environmental conditions and
+              sudden events. To support scalable benchmark construction, we further develop a
+              task-guided workflow for automated mining asset generation, structural validation,
+              physical configuration, and repair. Experiments show that additional post training on
+              the evaluated general domain tasks does not improve performance on the mining tasks,
+              while mining-specific environmental conditions remain challenging for the evaluated
+              policies. A physical robot case study further indicates that RMiner simulation data
+              can improve policy performance on a real robot. RMiner provides a reproducible
+              platform for robot learning and evaluation in underground mining.
+            </p>
           </div>
 
           <figure class="feature-video reveal">
-            <div class="video-frame video-frame-wide">
+            <div class="video-frame video-frame-overview">
               <video
                 controls
                 playsinline
                 preload="none"
-                poster="assets/images/hero-poster.jpg"
+                poster="assets/images/overview-poster.jpg"
                 aria-label="RMiner project overview video"
                 data-lazy-video
               >
@@ -372,16 +358,6 @@
             </article>
           </div>
 
-          <div class="condition-note reveal">
-            <div>
-              <span class="pulse-dot"></span>
-              <strong>Sudden Dust Burst</strong>
-            </div>
-            <p>
-              Dust and sudden dust bursts use the same local volumetric representation. Emission
-              timing and intensity distinguish sustained dust from an abrupt loss of visibility.
-            </p>
-          </div>
         </div>
       </section>
 
