@@ -40,6 +40,7 @@
       </button>
       <nav id="site-navigation" class="site-nav" aria-label="Primary navigation" data-nav>
         <a href="#overview">Overview</a>
+        <a href="#architecture">System</a>
         <a href="#tasks">Tasks</a>
         <a href="#construction">Construction</a>
         <a href="#conditions">Conditions</a>
@@ -146,6 +147,89 @@
             <figcaption>
               <span>Project overview</span>
               <span>2:34</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="architecture" class="section section-stone architecture-section" aria-labelledby="architecture-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="section-kicker">System Overview</p>
+            <h2 id="architecture-title">How RMiner fits together</h2>
+            <p>
+              Simulation components and an agent-guided construction workflow come together as an
+              interactive benchmark for underground manipulation.
+            </p>
+          </div>
+
+          <figure class="architecture-figure reveal" aria-labelledby="architecture-caption">
+            <div class="architecture-top">
+              <div class="architecture-panel architecture-components">
+                <div class="architecture-panel-heading">
+                  <span class="architecture-step">01 / Foundation</span>
+                  <h3>Simulation components</h3>
+                </div>
+                <div class="architecture-component-list">
+                  <div class="architecture-component">
+                    <strong>Robot embodiments</strong>
+                    <p>Unitree G1 <span aria-hidden="true">·</span> Galbot G1 <span aria-hidden="true">·</span> Astribot S1</p>
+                  </div>
+                  <div class="architecture-component">
+                    <strong>End effectors</strong>
+                    <p>Dexterous hands <span aria-hidden="true">·</span> Grippers</p>
+                  </div>
+                  <div class="architecture-component architecture-component-scene">
+                    <strong>Real-to-sim mining scene</strong>
+                    <p>Tunnel layout <span aria-hidden="true">·</span> Rock surfaces <span aria-hidden="true">·</span> Working areas</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="architecture-panel architecture-workflow">
+                <div class="architecture-panel-heading">
+                  <span class="architecture-step">02 / Workflow</span>
+                  <h3>Agent-driven construction</h3>
+                </div>
+                <div class="architecture-flow">
+                  <div class="architecture-flow-node architecture-agent">Task-guided agent</div>
+                  <span class="architecture-flow-arrow" aria-hidden="true">↓</span>
+                  <div class="architecture-flow-branch" aria-label="Two construction paths">
+                    <div class="architecture-flow-node">Mining assets</div>
+                    <div class="architecture-flow-node">Underground scene</div>
+                  </div>
+                  <span class="architecture-flow-arrow" aria-hidden="true">↓</span>
+                  <div class="architecture-flow-node architecture-environment">
+                    Interactive environment <small>Isaac Sim</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="architecture-connector" aria-hidden="true"><span>evaluated through</span></div>
+
+            <div class="architecture-benchmark">
+              <div class="architecture-benchmark-heading">
+                <span class="architecture-step">03 / Benchmark</span>
+                <h3>Reproducible mining manipulation</h3>
+              </div>
+              <div class="architecture-benchmark-grid">
+                <div class="architecture-benchmark-item">
+                  <strong>Six manipulation tasks</strong>
+                  <p>Assembly, pushing, operation, insertion, installation, and retrieval</p>
+                </div>
+                <div class="architecture-benchmark-item">
+                  <strong>Underground conditions</strong>
+                  <p>Uneven lighting, dust, and falling debris</p>
+                </div>
+                <div class="architecture-benchmark-item">
+                  <strong>Demonstration collection</strong>
+                  <p>Teleoperation for task execution and data collection</p>
+                </div>
+              </div>
+            </div>
+            <figcaption id="architecture-caption">
+              Conceptual system overview adapted from the project architecture diagram.
             </figcaption>
           </figure>
         </div>
